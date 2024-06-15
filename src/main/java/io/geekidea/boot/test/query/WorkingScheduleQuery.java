@@ -7,16 +7,19 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * 人员排班表查询参数
+ * 人员排班查询参数
  *
  * @author snailuu
  * @since 2024-06-15
  */
 @Data
-@Schema(description = "人员排班表查询参数")
+@Schema(description = "人员排班查询参数")
 public class WorkingScheduleQuery extends BasePageQuery {
 
     private static final long serialVersionUID = 1L;
+
+    @Schema(description = "值班安排")
+    private String arrangeType;
 
     @Schema(description = "值班人员")
     private Long userId;

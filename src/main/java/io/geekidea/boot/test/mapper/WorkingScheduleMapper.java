@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
- * 人员排班表 Mapper 接口
+ * 人员排班 Mapper 接口
  *
  * @author snailuu
  * @since 2024-06-15
@@ -20,7 +20,7 @@ import java.util.List;
 public interface WorkingScheduleMapper extends BaseMapper<WorkingSchedule> {
 
     /**
-     * 人员排班表详情
+     * 人员排班详情
      *
      * @param id
      * @return
@@ -28,7 +28,7 @@ public interface WorkingScheduleMapper extends BaseMapper<WorkingSchedule> {
     WorkingScheduleVo getWorkingScheduleById(Long id);
 
     /**
-     * 人员排班表分页列表
+     * 人员排班分页列表
      *
      * @param query
      * @return
@@ -36,7 +36,7 @@ public interface WorkingScheduleMapper extends BaseMapper<WorkingSchedule> {
     List<WorkingScheduleVo> getWorkingSchedulePage(WorkingScheduleQuery query);
 
     /**
-     * App人员排班表详情
+     * App人员排班详情
      *
      * @param id
      * @return
@@ -44,7 +44,7 @@ public interface WorkingScheduleMapper extends BaseMapper<WorkingSchedule> {
     AppWorkingScheduleVo getAppWorkingScheduleById(Long id);
 
     /**
-     * App人员排班表分页列表
+     * App人员排班分页列表
      *
      * @param query
      * @return

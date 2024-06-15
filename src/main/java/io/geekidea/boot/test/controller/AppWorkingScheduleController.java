@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 /**
- * App人员排班表 控制器
+ * App人员排班 控制器
  *
  * @author snailuu
  * @since 2024-06-15
  */
 @Slf4j
 @RestController
-@Tag(name = "App人员排班表")
+@Tag(name = "App人员排班")
 @RequestMapping("/app/workingSchedule")
 public class AppWorkingScheduleController {
 
@@ -29,31 +29,31 @@ public class AppWorkingScheduleController {
     private WorkingScheduleService workingScheduleService;
 
     /**
-     * 获取App人员排班表详情
+     * 获取App人员排班详情
      *
      * @param id
      * @return
      * @throws Exception
      */
-    @Operation(summary = "获取App人员排班表详情")
+    @Operation(summary = "获取App人员排班详情")
     @PostMapping("/getAppWorkingSchedule/{id}")
     public ApiResult<AppWorkingScheduleVo> getAppWorkingSchedule(@PathVariable Long id) {
-        log.info("获取App人员排班表详情：{}", id);
+        log.info("获取App人员排班详情：{}", id);
         AppWorkingScheduleVo appWorkingScheduleVo = workingScheduleService.getAppWorkingScheduleById(id);
         return ApiResult.success(appWorkingScheduleVo);
     }
 
     /**
-     * 获取App人员排班表分页列表
+     * 获取App人员排班分页列表
      *
      * query
      * @return
      * @throws Exception
      */
-    @Operation(summary = "获取App人员排班表分页列表")
+    @Operation(summary = "获取App人员排班分页列表")
     @PostMapping("/getAppWorkingSchedulePage")
     public ApiResult<AppWorkingScheduleVo> getAppWorkingSchedulePage(@Valid @RequestBody AppWorkingScheduleQuery query) {
-        log.info("获取App人员排班表分页列表：{}", query);
+        log.info("获取App人员排班分页列表：{}", query);
         Paging<AppWorkingScheduleVo> paging = workingScheduleService.getAppWorkingSchedulePage(query);
         return ApiResult.success(paging);
     }

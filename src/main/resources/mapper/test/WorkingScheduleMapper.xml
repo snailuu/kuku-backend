@@ -13,6 +13,9 @@
         select *
         from working_schedule
         <where>
+            <if test="arrangeType != null and arrangeType != ''">
+                and arrange_type = #{arrangeType}
+            </if>
             <if test="userId != null">
                 and user_id = #{userId}
             </if>
@@ -39,6 +42,9 @@
         select *
         from working_schedule
         <where>
+            <if test="arrangeType != null and arrangeType != ''">
+                and arrange_type = #{arrangeType}
+            </if>
             <if test="userId != null">
                 and user_id = #{userId}
             </if>

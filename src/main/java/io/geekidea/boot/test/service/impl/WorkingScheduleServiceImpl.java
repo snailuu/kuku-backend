@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 人员排班表 服务实现类
+ * 人员排班 服务实现类
  *
  * @author snailuu
  * @since 2024-06-15
@@ -50,7 +50,7 @@ public class WorkingScheduleServiceImpl extends ServiceImpl<WorkingScheduleMappe
         Long id = dto.getId();
         WorkingSchedule workingSchedule = getById(id);
         if (workingSchedule == null) {
-            throw new BusinessException("人员排班表不存在");
+            throw new BusinessException("人员排班不存在");
         }
         BeanUtils.copyProperties(dto, workingSchedule);
         return updateById(workingSchedule);

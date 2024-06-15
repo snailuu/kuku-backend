@@ -7,13 +7,13 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 人员排班表查询结果
+ * 人员排班查询结果
  *
  * @author snailuu
  * @since 2024-06-15
  */
 @Data
-@Schema(description = "人员排班表查询结果")
+@Schema(description = "人员排班查询结果")
 public class WorkingScheduleVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,8 +21,8 @@ public class WorkingScheduleVo implements Serializable {
     @Schema(description = "排班id 主键id")
     private Long id;
 
-    @Schema(description = "值班安排 外键arrange->id")
-    private Long arrangeId;
+    @Schema(description = "值班安排 外键arrange->type")
+    private String arrangeType;
 
     @Schema(description = "值班人员 外键user->id")
     private Long userId;
