@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * App人员排班表查询结果
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 @Data

@@ -18,5 +18,26 @@ public class ArrangeQuery extends BasePageQuery {
 
     private static final long serialVersionUID = 1L;
 
+    @Schema(description = "班次类型")
+    private String type;
+
+    @Schema(description = "早班开始")
+    private Time morningBegin;
+
+    @Schema(description = "早班结束")
+    private Time morningEnd;
+
+    @Schema(description = "午班开始")
+    private Time afternoonBegin;
+
+    @Schema(description = "午班结束")
+    private Time afternoonEnd;
+
+    @Schema(description = "晚班开始")
+    private Time nightBegin;
+
+    @Schema(description = "晚班结束")
+    private Time nightEnd;
+
 }
 

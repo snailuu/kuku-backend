@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * 工单查询参数
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 @Data
@@ -17,6 +17,9 @@ import java.util.Date;
 public class TicketQuery extends BasePageQuery {
 
     private static final long serialVersionUID = 1L;
+
+    @Schema(description = "用户id")
+    private Long userId;
 
     @Schema(description = "工单标题")
     private String title;

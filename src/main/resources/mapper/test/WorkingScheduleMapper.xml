@@ -13,6 +13,18 @@
         select *
         from working_schedule
         <where>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="workingDateStart != null">
+                and date(working_date) >= date(#{workingDateStart})
+            </if>
+            <if test="workingDateEnd != null">
+                and date(working_date) &lt;= date(#{workingDateEnd})
+            </if>
+            <if test="status != null and status != ''">
+                and status = #{status}
+            </if>
         </where>
     </select>
 
@@ -27,6 +39,18 @@
         select *
         from working_schedule
         <where>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="workingDateStart != null">
+                and date(working_date) >= date(#{workingDateStart})
+            </if>
+            <if test="workingDateEnd != null">
+                and date(working_date) &lt;= date(#{workingDateEnd})
+            </if>
+            <if test="status != null and status != ''">
+                and status = #{status}
+            </if>
         </where>
     </select>
 

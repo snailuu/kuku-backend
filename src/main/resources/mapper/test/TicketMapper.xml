@@ -13,6 +13,9 @@
         select *
         from ticket
         <where>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
             <if test="title != null and title != ''">
                 and title like concat('%',#{column.propertyName},'%'
             </if>
@@ -33,6 +36,9 @@
         select *
         from ticket
         <where>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
             <if test="title != null and title != ''">
                 and title like concat('%',#{column.propertyName},'%'
             </if>

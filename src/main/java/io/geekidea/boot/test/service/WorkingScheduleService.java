@@ -13,7 +13,7 @@ import io.geekidea.boot.test.vo.AppWorkingScheduleVo;
 /**
  * 人员排班表 服务接口
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 public interface WorkingScheduleService extends IService<WorkingSchedule> {

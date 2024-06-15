@@ -13,6 +13,27 @@
         select *
         from arrange
         <where>
+            <if test="type != null and type != ''">
+                and type = #{type}
+            </if>
+            <if test="morningBegin != null">
+                and morning_begin >= #{morningBegin}
+            </if>
+            <if test="morningEnd != null">
+                and morning_end le; #{morningEnd}
+            </if>
+            <if test="afternoonBegin != null">
+                and afternoon_begin >= #{afternoonBegin}
+            </if>
+            <if test="afternoonEnd != null">
+                and afternoon_end le; #{afternoonEnd}
+            </if>
+            <if test="nightBegin != null">
+                and night_begin >= #{nightBegin}
+            </if>
+            <if test="nightEnd != null">
+                and night_end le; #{nightEnd}
+            </if>
         </where>
     </select>
 
@@ -27,6 +48,27 @@
         select *
         from arrange
         <where>
+            <if test="type != null and type != ''">
+                and type = #{type}
+            </if>
+            <if test="morningBegin != null">
+                and morning_begin >= #{morningBegin}
+            </if>
+            <if test="morningEnd != null">
+                and morning_end le; #{morningEnd}
+            </if>
+            <if test="afternoonBegin != null">
+                and afternoon_begin >= #{afternoonBegin}
+            </if>
+            <if test="afternoonEnd != null">
+                and afternoon_end le; #{afternoonEnd}
+            </if>
+            <if test="nightBegin != null">
+                and night_begin >= #{nightBegin}
+            </if>
+            <if test="nightEnd != null">
+                and night_end le; #{nightEnd}
+            </if>
         </where>
     </select>
 

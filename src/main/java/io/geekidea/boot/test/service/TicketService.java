@@ -13,7 +13,7 @@ import io.geekidea.boot.test.vo.AppTicketVo;
 /**
  * 工单 服务接口
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 public interface TicketService extends IService<Ticket> {

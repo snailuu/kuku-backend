@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * App工单查询参数
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 @Data

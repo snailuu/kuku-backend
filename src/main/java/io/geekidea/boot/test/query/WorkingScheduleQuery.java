@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * 人员排班表查询参数
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 @Data
@@ -17,6 +17,18 @@ import java.util.Date;
 public class WorkingScheduleQuery extends BasePageQuery {
 
     private static final long serialVersionUID = 1L;
+
+    @Schema(description = "值班人员")
+    private Long userId;
+
+    @Schema(description = "开始的值班日期")
+    private Date workingDateStart;
+
+    @Schema(description = "结束的值班日期")
+    private Date workingDateEnd;
+
+    @Schema(description = "值班状态")
+    private String status;
 
 }
 

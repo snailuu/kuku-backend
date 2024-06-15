@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * 人员排班表
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 @Data

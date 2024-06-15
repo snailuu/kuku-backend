@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 人员排班表 Mapper 接口
  *
- * @author geekidea
+ * @author snailuu
  * @since 2024-06-15
  */
 @Mapper
