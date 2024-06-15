@@ -90,4 +90,9 @@ public class WorkingScheduleServiceImpl extends ServiceImpl<WorkingScheduleMappe
         return paging;
     }
 
+    @Override
+    public Paging<AppWorkingScheduleVo> getWorkingScheduleByDate(String workingDate) {
+        return null;
+    }
+
 }

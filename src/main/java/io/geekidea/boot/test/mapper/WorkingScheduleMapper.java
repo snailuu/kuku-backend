@@ -51,4 +51,8 @@ public interface WorkingScheduleMapper extends BaseMapper<WorkingSchedule> {
      */
     List<AppWorkingScheduleVo> getAppWorkingSchedulePage(AppWorkingScheduleQuery query);
 
+    /**
+     * 查看某一天的值班信息
+     */
+    List<AppWorkingScheduleVo> getWorkingScheduleByDate(String workingDate);
 }

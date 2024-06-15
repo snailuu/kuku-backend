@@ -81,4 +81,13 @@ public interface WorkingScheduleService extends IService<WorkingSchedule> {
      */
     Paging<AppWorkingScheduleVo> getAppWorkingSchedulePage(AppWorkingScheduleQuery query);
 
+    /**
+     * 根据日期获取排班信息
+     *
+     * @param workingDate
+     * @return
+     */
+    Paging<AppWorkingScheduleVo> getWorkingScheduleByDate(String workingDate);
+
+
 }

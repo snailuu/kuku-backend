@@ -59,5 +59,10 @@
             </if>
         </where>
     </select>
+    <select id="getWorkingScheduleByDate" resultType="io.geekidea.boot.test.vo.AppWorkingScheduleVo">
+        SELECT *
+        from working_schedule
+        WHERE working_date = #{workingDate}
+    </select>
 
 </mapper>
