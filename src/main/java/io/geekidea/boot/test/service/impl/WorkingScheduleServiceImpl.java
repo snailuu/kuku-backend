@@ -13,6 +13,7 @@ import io.geekidea.boot.test.service.WorkingScheduleService;
 import io.geekidea.boot.test.vo.WorkingScheduleVo;
 import io.geekidea.boot.test.query.AppWorkingScheduleQuery;
 import io.geekidea.boot.test.vo.AppWorkingScheduleVo;
+import io.geekidea.boot.user.service.UserService;
 import io.geekidea.boot.util.PagingUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -35,6 +36,9 @@ public class WorkingScheduleServiceImpl extends ServiceImpl<WorkingScheduleMappe
 
     @Autowired
     private WorkingScheduleMapper workingScheduleMapper;
+
+    @Autowired
+    private UserService userService;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -72,6 +76,9 @@ public class WorkingScheduleServiceImpl extends ServiceImpl<WorkingScheduleMappe
         OrderMapping orderMapping = new OrderMapping();
         PagingUtil.handlePage(query, orderMapping, OrderByItem.desc("id"));
         List<WorkingScheduleVo> list = workingScheduleMapper.getWorkingSchedulePage(query);
+        for(WorkingScheduleVo workingScheduleVo : list){
+            workingScheduleVo.setNickname(userService.getUserById(workingScheduleVo.getUserId()).getNickname());
+        }
         Paging<WorkingScheduleVo> paging = new Paging<>(list);
         return paging;
     }

@@ -33,5 +33,8 @@ public class WorkingScheduleVo implements Serializable {
     @Schema(description = "值班状态：1计划中、2进行中、3已打卡、4缺勤")
     private String status;
 
+    @Schema(description = "值班人员姓名")
+    private String nickname;
+
 }
 
