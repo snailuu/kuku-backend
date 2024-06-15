@@ -120,4 +120,8 @@ public class GeneratorTableServiceImpl extends ServiceImpl<GeneratorTableMapper,
         return paging;
     }
 
+    public void deleteTableByTableName(String tableName) {
+
+    }
+
 }

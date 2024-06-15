@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.boot.test.mapper.TicketMapper">
+
+    <select id="getTicketById" resultType="io.geekidea.boot.test.vo.TicketVo">
+        select *
+        from ticket
+        where id = #{id}
+    </select>
+
+    <select id="getTicketPage" parameterType="io.geekidea.boot.test.query.TicketQuery"
+            resultType="io.geekidea.boot.test.vo.TicketVo">
+        select *
+        from ticket
+        <where>
+            <if test="title != null and title != ''">
+                and title like concat('%',#{column.propertyName},'%'
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+
+    <select id="getAppTicketById" resultType="io.geekidea.boot.test.vo.AppTicketVo">
+        select *
+        from ticket
+        where id = #{id}
+    </select>
+
+    <select id="getAppTicketPage" parameterType="io.geekidea.boot.test.query.AppTicketQuery"
+            resultType="io.geekidea.boot.test.vo.AppTicketVo">
+        select *
+        from ticket
+        <where>
+            <if test="title != null and title != ''">
+                and title like concat('%',#{column.propertyName},'%'
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+
+</mapper>

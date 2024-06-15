@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.boot.test.mapper.ArrangeMapper">
+
+    <select id="getArrangeById" resultType="io.geekidea.boot.test.vo.ArrangeVo">
+        select *
+        from arrange
+        where id = #{id}
+    </select>
+
+    <select id="getArrangePage" parameterType="io.geekidea.boot.test.query.ArrangeQuery"
+            resultType="io.geekidea.boot.test.vo.ArrangeVo">
+        select *
+        from arrange
+        <where>
+        </where>
+    </select>
+
+    <select id="getAppArrangeById" resultType="io.geekidea.boot.test.vo.AppArrangeVo">
+        select *
+        from arrange
+        where id = #{id}
+    </select>
+
+    <select id="getAppArrangePage" parameterType="io.geekidea.boot.test.query.AppArrangeQuery"
+            resultType="io.geekidea.boot.test.vo.AppArrangeVo">
+        select *
+        from arrange
+        <where>
+        </where>
+    </select>
+
+</mapper>

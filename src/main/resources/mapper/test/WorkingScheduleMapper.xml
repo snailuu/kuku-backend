@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.boot.test.mapper.WorkingScheduleMapper">
+
+    <select id="getWorkingScheduleById" resultType="io.geekidea.boot.test.vo.WorkingScheduleVo">
+        select *
+        from working_schedule
+        where id = #{id}
+    </select>
+
+    <select id="getWorkingSchedulePage" parameterType="io.geekidea.boot.test.query.WorkingScheduleQuery"
+            resultType="io.geekidea.boot.test.vo.WorkingScheduleVo">
+        select *
+        from working_schedule
+        <where>
+        </where>
+    </select>
+
+    <select id="getAppWorkingScheduleById" resultType="io.geekidea.boot.test.vo.AppWorkingScheduleVo">
+        select *
+        from working_schedule
+        where id = #{id}
+    </select>
+
+    <select id="getAppWorkingSchedulePage" parameterType="io.geekidea.boot.test.query.AppWorkingScheduleQuery"
+            resultType="io.geekidea.boot.test.vo.AppWorkingScheduleVo">
+        select *
+        from working_schedule
+        <where>
+        </where>
+    </select>
+
+</mapper>
