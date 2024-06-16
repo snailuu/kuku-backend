@@ -29,12 +29,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.InputStream;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.security.InvalidKeyException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * @author geekidea
@@ -53,6 +59,69 @@ public class UploadServiceImpl implements UploadService {
     @Autowired
     private SysFileService sysFileService;
 
+    private static final String HMAC_SHA1_ALGORITHM = "HmacSHA1";
+    private final static String host = "http://v0.api.upyun.com";
+    private final static String operator = "kuku";
+    private final static String secret = "g9mDLlRgzQG7nsbsuPtlqHdi56ei9WkK";
+    private final static String method = "PUT";
+    private final static String uri = "/halo-blog-oss/kuku/";
+    private final String responseURI =  "https://oss.snailuu.cn/kuku/";
+    private static File file = new File("C:\\Users\\snailuu\\Downloads\\kuku-backend\\upload\\202406\\20240615174250558318259552261.jpg"); //本地文件路径
+    private static String date = getRfc1123Time();
+
+
+    /**
+     * 获取签名
+     * @return 签名
+     */
+    private static String getAuth(String fileUri) throws Exception {
+        return sign(operator, md5(secret), method, fileUri, date, "", "");
+    }
+
+    private static String md5(String string) {
+        byte[] hash;
+        try {
+            hash = MessageDigest.getInstance("MD5").digest(string.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("UTF-8 is unsupported", e);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("MessageDigest不支持MD5Util", e);
+        }
+        StringBuilder hex = new StringBuilder(hash.length * 2);
+        for (byte b : hash) {
+            if ((b & 0xFF) < 0x10) hex.append("0");
+            hex.append(Integer.toHexString(b & 0xFF));
+        }
+        return hex.toString();
+    }
+    private static byte[] hashHmac(String data, String key)
+            throws SignatureException, NoSuchAlgorithmException, InvalidKeyException {
+        SecretKeySpec signingKey = new SecretKeySpec(key.getBytes(), HMAC_SHA1_ALGORITHM);
+        Mac mac = Mac.getInstance(HMAC_SHA1_ALGORITHM);
+        mac.init(signingKey);
+        return mac.doFinal(data.getBytes());
+    }
+    public static String sign(String key, String secret, String method, String uri, String date, String policy,
+                              String md5) throws Exception {
+        String value = method + "&" + uri + "&" + date;
+        if (policy != "") {
+            value = value + "&" + policy;
+        }
+        if (md5 != "") {
+            value = value + "&" + md5;
+        }
+        byte[] hmac = hashHmac(value, secret);
+        System.out.println(value);
+        String sign = Base64.getEncoder().encodeToString(hmac);
+        return "UPYUN " + key + ":" + sign;
+    }
+    public static String getRfc1123Time() {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
+        dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+        return dateFormat.format(calendar.getTime());
+    }
     @Override
     public UploadVo upload(String type, MultipartFile multipartFile) throws Exception {
         log.info("文件上传开始");
@@ -81,28 +150,55 @@ public class UploadServiceImpl implements UploadService {
         String url;
         File uploadFile = null;
         FileServerType fileServerType = fileProperties.getFileServerType();
+
         if (FileServerType.OSS == fileServerType) {
             // 阿里云OSS文件上传
             InputStream inputStream = multipartFile.getInputStream();
             url = OssApi.upload(inputStream, uploadDirName, newFileName);
         } else {
-            // 本地文件上传路径
-            String uploadPath = localFileProperties.getUploadPath();
-            File uploadRootDir = new File(uploadPath);
-            // 上传目录不存在，则直接创建
-            if (!uploadRootDir.exists()) {
-                uploadRootDir.mkdirs();
+
+            String requestUri = uri+uploadDirName+"/"+newFileName;
+            URL fileUrl = new URL(host+uri+uploadDirName+"/"+newFileName);
+            HttpURLConnection conn = (HttpURLConnection) fileUrl.openConnection();
+            conn.setRequestMethod(method);
+            conn.setUseCaches(false);
+            conn.setDoOutput(true);
+            date=getRfc1123Time();
+            conn.setRequestProperty("date",date);
+            conn.setRequestProperty("Authorization",getAuth(requestUri));
+
+            conn.connect();
+            InputStream inputStream = new FileInputStream(file);
+            OutputStream os =conn.getOutputStream();
+            byte[] data = new byte[4096];
+            int temp = 0;
+
+            // 上传文件内容
+            while ((temp = inputStream.read(data)) != -1) {
+                os.write(data, 0, temp);
             }
-            File uploadDir = new File(uploadRootDir, uploadDirName);
-            if (!uploadDir.exists()) {
-                uploadDir.mkdirs();
+
+            int responseCode = conn.getResponseCode(); //返回的状态码
+
+            if (os != null) {
+                os.close();
+                os = null;
             }
-            // 上传文件到本地目录
-            uploadFile = new File(uploadDir, newFileName);
-            log.info("uploadFile:" + uploadFile);
-            multipartFile.transferTo(uploadFile);
+            if (inputStream != null) {
+                inputStream.close();
+                inputStream = null;
+            }
+            if (conn != null) {
+                conn.disconnect();
+                conn = null;
+            }
+            System.out.println(responseCode);
+
+
+            // 上传文件到oss目录
+            log.info("uploadFile:" + requestUri+"/"+uploadDirName);
             // 返回本地文件访问路径
-            url = localFileProperties.getAccessUrl() + "/" + uploadDirName + "/" + newFileName;
+            url = responseURI+"/"+uploadDirName+"/"+newFileName;
             log.info("url:" + url);
         }
         // 保存文件记录
