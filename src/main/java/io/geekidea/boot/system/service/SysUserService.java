@@ -65,6 +65,13 @@ public interface SysUserService extends IService<SysUser> {
     Paging<SysUserVo> getSysUserPage(SysUserQuery query);
 
     /**
+     * 根据昵称查询系统用户列表
+     * @param query
+     * @return
+     */
+    Paging<SysUserVo> getSysUserListByNickName(SysUserQuery query);
+
+    /**
      * 重置系统用户密码
      *
      * @param sysUserResetPasswordDto

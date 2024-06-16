@@ -111,6 +111,16 @@ public class SysUserController {
         return ApiResult.success(paging);
     }
 
+    @PostMapping("/getSysUserPageByNickname")
+    @Operation(summary = "根据nickname返回系统用户分页列表")
+    @Permission("sys:user:page")
+    public ApiResult<SysUserVo> getSysUserPageByNickname(@Valid @RequestBody SysUserQuery query) {
+        Paging<SysUserVo> paging = sysUserService.getSysUserListByNickName(query);
+        return ApiResult.success(paging);
+    }
+
+
+
     /**
      * 重置系统用户密码
      *

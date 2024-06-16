@@ -46,6 +46,12 @@
         where u.username = #{username}
     </select>
 
+    <select id="getSysUserByNickname" parameterType="io.geekidea.boot.system.query.SysUserQuery"
+            resultType="io.geekidea.boot.system.vo.SysUserVo">
+        select * from sys_user
+        where nickname like CONCAT('%',#{nickname},'%')
+    </select>
+
     <select id="getCountByRoleId" resultType="java.lang.Integer">
         select count(1)
         from sys_user

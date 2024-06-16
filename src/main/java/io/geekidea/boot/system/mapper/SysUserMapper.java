@@ -42,6 +42,11 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
     SysUser getSysUserByUsername(String username);
 
     /**
+     * 根据nickname模糊查询用户列表
+     */
+    List<SysUserVo> getSysUserByNickname(SysUserQuery query);
+
+    /**
      * 根据角色ID获取用户数量
      *
      * @param roleId

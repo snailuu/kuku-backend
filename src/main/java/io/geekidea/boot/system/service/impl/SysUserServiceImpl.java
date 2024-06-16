@@ -101,6 +101,15 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return paging;
     }
 
+    @Override
+    public Paging<SysUserVo> getSysUserListByNickName(SysUserQuery query){
+        OrderMapping orderMapping = new OrderMapping();
+        orderMapping.put("createTime", "create_time");
+        PagingUtil.handlePage(query, orderMapping, OrderByItem.desc("id"));
+        List<SysUserVo> list = sysUserMapper.getSysUserByNickname(query);
+        Paging<SysUserVo> paging = new Paging<>(list);
+        return paging;
+    }
     @Transactional(rollbackFor = Exception.class)
     @Override
     public boolean resetSysUserPassword(SysUserResetPasswordDto sysUserResetPasswordDto) {

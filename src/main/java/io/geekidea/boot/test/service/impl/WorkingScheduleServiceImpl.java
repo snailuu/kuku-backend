@@ -5,6 +5,7 @@ import io.geekidea.boot.framework.exception.BusinessException;
 import io.geekidea.boot.framework.page.OrderByItem;
 import io.geekidea.boot.framework.page.OrderMapping;
 import io.geekidea.boot.framework.page.Paging;
+import io.geekidea.boot.system.service.SysUserService;
 import io.geekidea.boot.test.dto.WorkingScheduleDto;
 import io.geekidea.boot.test.entity.WorkingSchedule;
 import io.geekidea.boot.test.mapper.WorkingScheduleMapper;
@@ -38,7 +39,7 @@ public class WorkingScheduleServiceImpl extends ServiceImpl<WorkingScheduleMappe
     private WorkingScheduleMapper workingScheduleMapper;
 
     @Autowired
-    private UserService userService;
+    private SysUserService sysUserService;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
@@ -77,7 +78,7 @@ public class WorkingScheduleServiceImpl extends ServiceImpl<WorkingScheduleMappe
         PagingUtil.handlePage(query, orderMapping, OrderByItem.desc("id"));
         List<WorkingScheduleVo> list = workingScheduleMapper.getWorkingSchedulePage(query);
         for(WorkingScheduleVo workingScheduleVo : list){
-            workingScheduleVo.setNickname(userService.getUserById(workingScheduleVo.getUserId()).getNickname());
+            workingScheduleVo.setNickname(sysUserService.getSysUserById(workingScheduleVo.getUserId()).getNickname());
         }
         Paging<WorkingScheduleVo> paging = new Paging<>(list);
         return paging;
