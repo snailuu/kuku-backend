@@ -27,6 +27,13 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 500MB
+  # 邮件配置
+  mail:
+    username: 19986452145@163.com
+    password: VHYDORCMLRMTOMZT
+    default-encoding: utf-8
+    host: smtp.163.com
+    port: 25
   # 数据源配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
