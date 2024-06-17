@@ -152,7 +152,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         }
 
         // token拦截器
-        registry.addInterceptor(tokenInterceptor()).excludePathPatterns("/admin/login", "/app/login");
+        registry.addInterceptor(tokenInterceptor()).excludePathPatterns("/admin/login", "/app/login","/admin/register");
         // 管理后台登录拦截器配置
         boolean enableAdminInterceptor = loginAdminProperties.isEnable();
         if (enableAdminInterceptor) {

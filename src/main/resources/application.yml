@@ -136,6 +136,7 @@ login:
     # 排除的路径
     exclude-paths:
       - /admin/login
+      - /admin/register
   # 用户端登录配置
   app:
     # 是否启用APP移动端登录权限校验

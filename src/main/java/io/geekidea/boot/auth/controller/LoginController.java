@@ -1,11 +1,15 @@
 package io.geekidea.boot.auth.controller;
 
 import io.geekidea.boot.auth.dto.LoginDto;
+import io.geekidea.boot.auth.dto.RegisterDto;
 import io.geekidea.boot.auth.service.LoginService;
+import io.geekidea.boot.auth.service.RegisterService;
 import io.geekidea.boot.auth.vo.LoginTokenVo;
 import io.geekidea.boot.auth.vo.LoginVo;
+import io.geekidea.boot.auth.vo.RegisterVo;
 import io.geekidea.boot.common.constant.LoginConstant;
 import io.geekidea.boot.framework.response.ApiResult;
+import io.geekidea.boot.system.service.SysUserService;
 import io.geekidea.boot.util.CookieUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -33,6 +37,11 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    @Autowired
+    private RegisterService registerService;
+
+
+
     /**
      * 管理后台登录
      *
@@ -49,6 +58,19 @@ public class LoginController {
         // 输出token到cookie
         CookieUtil.addCookie(LoginConstant.ADMIN_COOKIE_TOKEN_NAME, loginTokenVo.getToken(), request, response);
         return ApiResult.success(loginTokenVo);
+    }
+
+    @PostMapping("/register")
+    @Operation(summary = "管理后台注册")
+    public ApiResult<RegisterVo> register(@Valid @RequestBody RegisterDto registerDto, HttpServletRequest request, HttpServletResponse response){
+        boolean flag = registerService.register(registerDto);
+        RegisterVo registerVo = new RegisterVo();
+        if(flag){
+            registerVo.setUsername(registerDto.getUsername());
+            return ApiResult.success(registerVo);
+        }else {
+            return ApiResult.fail("注册用户失败");
+        }
     }
 
     /**
