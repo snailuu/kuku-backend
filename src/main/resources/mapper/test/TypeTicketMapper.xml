@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.boot.test.mapper.TypeTicketMapper">
+
+    <select id="getTypeTicketById" resultType="io.geekidea.boot.test.vo.TypeTicketVo">
+        select *
+        from type_ticket
+        where id = #{id}
+    </select>
+
+    <select id="getTypeTicketPage" parameterType="io.geekidea.boot.test.query.TypeTicketQuery"
+            resultType="io.geekidea.boot.test.vo.TypeTicketVo">
+        select *
+        from type_ticket
+        <where>
+            <if test="keyword != null and keyword != ''">
+                and (name like concat('%',#{keyword},'%'))
+            </if>
+        </where>
+    </select>
+
+    <select id="getAppTypeTicketById" resultType="io.geekidea.boot.test.vo.AppTypeTicketVo">
+        select *
+        from type_ticket
+        where id = #{id}
+    </select>
+
+    <select id="getAppTypeTicketPage" parameterType="io.geekidea.boot.test.query.AppTypeTicketQuery"
+            resultType="io.geekidea.boot.test.vo.AppTypeTicketVo">
+        select *
+        from type_ticket
+        <where>
+            <if test="keyword != null and keyword != ''">
+                and (name like concat('%',#{keyword},'%'))
+            </if>
+        </where>
+    </select>
+
+</mapper>
