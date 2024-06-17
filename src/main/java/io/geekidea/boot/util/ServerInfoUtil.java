@@ -47,6 +47,53 @@ public class ServerInfoUtil {
     }
 
     /**
+     * 获取服务器信息
+     * 便与短时间得到回复的服务信息
+     */
+    public static FastServerInfo getServerInfoFast(){
+        Cpu cpu = getCpu();
+        GlobalMemory globalMemory = OshiUtil.getMemory();
+        // 总内存
+        long total = globalMemory.getTotal();
+        // 空闲内存
+        long available = globalMemory.getAvailable();
+        // 已使用的
+        long used = total - available;
+        // 保留3位小数
+        double memory = Math.round(((double) used /total)*100.0*1000.0)/1000.0;
+
+        RuntimeInfo runtimeInfo = SystemUtil.getRuntimeInfo();
+        // JVM已分配内存
+        long totalMemory = runtimeInfo.getTotalMemory();
+        // JVM最大内存
+        long maxMemory = runtimeInfo.getMaxMemory();
+        // JVM最大可用内存
+        long usableMemory = runtimeInfo.getUsableMemory();
+        // JVM已分配内存中的剩余空间
+        long freeMemory = runtimeInfo.getFreeMemory();
+
+        double jvm = Math.round(((double) totalMemory /maxMemory)*100.0*1000.0)/1000.0;
+
+        SystemInfo systemInfo = new SystemInfo();
+        OperatingSystem operatingSystem = systemInfo.getOperatingSystem();
+        FileSystem fileSystem = operatingSystem.getFileSystem();
+        List<OSFileStore> fileStores = fileSystem.getFileStores();
+        if(!fileStores.isEmpty()){
+            OSFileStore osFileStore=fileStores.get(0);
+            long free = osFileStore.getUsableSpace();
+            // 获取磁盘分区的总空间
+            total = osFileStore.getTotalSpace();
+            // 已使用的
+            used = total - free;
+            // 保留3位小数
+        }
+        double disk = Math.round(((double) used /total)*100.0*1000.0)/1000.0;
+        return new FastServerInfo(cpu,memory,jvm,disk);
+    }
+
+
+
+    /**
      * 获取CPU信息
      *
      * @return

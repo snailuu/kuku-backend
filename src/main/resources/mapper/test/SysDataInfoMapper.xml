@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.geekidea.boot.test.mapper.SysDataInfoMapper">
+    <select id="getTotalTicket" resultType="integer">
+        select count(0) from ticket
+    </select>
+
+    <select id="getReadyTicket" resultType="integer">
+        SELECT count(0) FROM ticket
+        WHERE `status` != 4
+    </select>
+
+    <select id="getTotalUser" resultType="integer">
+        SELECT count(0) FROM sys_user
+    </select>
+
+    <select id="recentFinishTicket" resultType="integer">
+        SELECT COUNT(0)
+        FROM ticket
+        WHERE `status`= 2 AND DATE(created_time) = #{today};
+
+    </select>
+    <select id="recentReadyTicket" resultType="integer">
+        SELECT COUNT(0)
+        FROM ticket
+        WHERE `status` != 2 AND DATE(created_time) = #{today};
+
+    </select>
+
+
+
+
+</mapper>
