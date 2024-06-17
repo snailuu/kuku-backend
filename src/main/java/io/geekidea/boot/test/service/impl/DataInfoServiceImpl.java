@@ -5,8 +5,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.geekidea.boot.test.mapper.SysDataInfoMapper;
 import io.geekidea.boot.test.service.DataInfoService;
 import io.geekidea.boot.test.vo.DataInfoVo;
+import io.geekidea.boot.test.vo.TicketListVo;
 import io.geekidea.boot.test.vo.TicketVo;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -29,13 +29,17 @@ public class DataInfoServiceImpl extends ServiceImpl<SysDataInfoMapper, DataInfo
         for(int i = 0; i < 7; i++){
             finishList.add(this.baseMapper.recentFinishTicket(RecentDateList.get(i)));
         }
-        dataInfoVo.setRecentFinishTicket(finishList);
         for(int i = 0; i < 7; i++){
             unFinishList.add(this.baseMapper.recentReadyTicket(RecentDateList.get(i)));
         }
-        dataInfoVo.setRecentReadyTicket(unFinishList);
+        List<TicketListVo> list = new ArrayList<>();
+        for(int i = 0; i < 7; i++){
+            list.add(new TicketListVo(RecentDateList.get(i), finishList.get(i), unFinishList.get(i)));
+        }
+        dataInfoVo.setRecentTicket(list);
         return dataInfoVo;
     }
+
 
     List<String> getRecentDate(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

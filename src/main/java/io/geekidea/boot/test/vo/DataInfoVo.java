@@ -21,8 +21,10 @@ public class DataInfoVo implements Serializable {
     private Integer totalReadyTicket;
 
     @Schema(description = "最近7天完成工单数")
-    private List<Integer> recentFinishTicket;
+    private List<TicketListVo> recentTicket;
 
     @Schema(description = "最近7天待完成工单数")
     private List<Integer> recentReadyTicket;
+
+
 }
