@@ -66,7 +66,6 @@ public class UploadServiceImpl implements UploadService {
     private final static String method = "PUT";
     private final static String uri = "/halo-blog-oss/kuku/";
     private final String responseURI =  "https://oss.snailuu.cn/kuku/";
-    private static File file = new File("C:\\Users\\snailuu\\Downloads\\kuku-backend\\upload\\202406\\20240615174250558318259552261.jpg"); //本地文件路径
     private static String date = getRfc1123Time();
 
 
@@ -168,7 +167,7 @@ public class UploadServiceImpl implements UploadService {
             conn.setRequestProperty("Authorization",getAuth(requestUri));
 
             conn.connect();
-            InputStream inputStream = new FileInputStream(file);
+            InputStream inputStream = multipartFile.getInputStream();
             OutputStream os =conn.getOutputStream();
             byte[] data = new byte[4096];
             int temp = 0;
