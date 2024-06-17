@@ -14,6 +14,7 @@ import io.geekidea.boot.test.vo.TicketVo;
 import io.geekidea.boot.test.query.AppTicketQuery;
 import io.geekidea.boot.test.vo.AppTicketVo;
 import io.geekidea.boot.util.PagingUtil;
+import io.geekidea.boot.util.UUIDUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,7 @@ public class TicketServiceImpl extends ServiceImpl<TicketMapper, Ticket> impleme
     @Override
     public boolean addTicket(TicketDto dto) {
         Ticket ticket = new Ticket();
+        dto.setUuid(UUIDUtil.getUuid().substring(0,10));
         BeanUtils.copyProperties(dto, ticket);
         return save(ticket);
     }
