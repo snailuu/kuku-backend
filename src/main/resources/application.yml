@@ -34,6 +34,18 @@ spring:
     default-encoding: utf-8
     host: smtp.163.com
     port: 25
+  #配置mq
+  rabbitmq:
+    virtual-host: email
+    username: guest
+    password: guest
+    addresses: 127.0.0.1:5672
+    publisher-returns: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 100
+
   # 数据源配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
