@@ -36,6 +36,8 @@ public interface TicketService extends IService<Ticket> {
      */
     boolean updateTicket(TicketDto dto);
 
+    boolean updateTicketStatus(Long id);
+
     /**
      * 删除工单
      *

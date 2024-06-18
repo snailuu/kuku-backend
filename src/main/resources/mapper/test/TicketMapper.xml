@@ -25,6 +25,13 @@
         </where>
     </select>
 
+    <select id="updateTicketStatus" resultType="boolean">
+        UPDATE ticket
+        SET `status` = #{status}
+        WHERE id = #{id}
+    </select>
+
+
     <select id="getAppTicketById" resultType="io.snailuu.boot.test.vo.AppTicketVo">
         select *
         from ticket

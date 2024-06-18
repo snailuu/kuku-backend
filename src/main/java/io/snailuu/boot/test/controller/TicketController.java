@@ -66,6 +66,15 @@ public class TicketController {
         return ApiResult.result(flag);
     }
 
+    @Log(type = SysLogType.UPDATE)
+    @Operation(summary = "审核工单")
+    @PostMapping("/updateTicketStatus")
+    @Permission("ticket:update")
+    public ApiResult updateTicketStatus(@Valid @RequestBody Long id) {
+        boolean flag = ticketService.updateTicketStatus(id);
+        return ApiResult.result(flag);
+    }
+
     /**
      * 删除工单
      *

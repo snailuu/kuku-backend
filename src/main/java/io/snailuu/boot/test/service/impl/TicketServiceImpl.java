@@ -60,6 +60,16 @@ public class TicketServiceImpl extends ServiceImpl<TicketMapper, Ticket> impleme
 
     @Transactional(rollbackFor = Exception.class)
     @Override
+    public boolean updateTicketStatus(Long id){
+        Ticket ticket = getById(id);
+        if (ticket == null) {
+            throw new BusinessException("工单不存在");
+        }
+        return ticketMapper.updateTicketStatus(id,1);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
     public boolean deleteTicket(Long id) {
         return removeById(id);
     }

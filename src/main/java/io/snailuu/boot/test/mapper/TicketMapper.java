@@ -36,6 +36,11 @@ public interface TicketMapper extends BaseMapper<Ticket> {
     List<TicketVo> getTicketPage(TicketQuery query);
 
     /**
+     * 审核工单
+     */
+    boolean updateTicketStatus (Long id, int status);
+
+    /**
      * App工单详情
      *
      * @param id
