@@ -194,7 +194,7 @@ config.setRequestMappingType(RequestMappingType.CAMEL);
 - mybatis控制台打印SQL执行语句及结果集
 - Redis使用Jackson序列化 `RedisTemplateConfig` `GenericJackson2JsonRedisSerializer`
 - 删除security目录	
-- [修改sys_user表结构](https://github.com/geekidea/spring-boot-plus/blob/master/docs/db/mysql_spring_boot_plus.sql)
+- [修改sys_user表结构](https://github.com/snailuu/spring-boot-plus/blob/master/docs/db/mysql_spring_boot_plus.sql)
 	
 ### 📝 Added/Modified
 - Add `SpringBootPlusFilterConfig` 过滤器配置类
@@ -227,20 +227,20 @@ config.setRequestMappingType(RequestMappingType.CAMEL);
 - 优化 `maven-assembly-plugin` 项目打包插件
 	
 ### 📝 Added/Modified
-- Add [install-jdk.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/bin/install/install-jdk.sh) yum安装`jdk8`脚本
-- Add [install-git.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/bin/install/install-git.sh) yum安装`git`脚本
-- Add [install-maven.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/bin/install/install-maven.sh) yum安装`maven`脚本
-- Add [install-redis.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/bin/install/install-redis.sh) yum安装`redis`脚本
-- Add [install-mysql.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/bin/install/install-mysql.sh) yum安装`mysql`脚本
-- Add [install-all.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/bin/install/install-all.sh) 安装所有环境脚本
-- Add [download-install-all.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/bin/install/download-install-all.sh) 下载并安装所有环境脚本
-- Add [deploy.sh](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/deploy/deploy.sh) 下载项目/构建/部署/启动项目脚本
+- Add [install-jdk.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/bin/install/install-jdk.sh) yum安装`jdk8`脚本
+- Add [install-git.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/bin/install/install-git.sh) yum安装`git`脚本
+- Add [install-maven.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/bin/install/install-maven.sh) yum安装`maven`脚本
+- Add [install-redis.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/bin/install/install-redis.sh) yum安装`redis`脚本
+- Add [install-mysql.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/bin/install/install-mysql.sh) yum安装`mysql`脚本
+- Add [install-all.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/bin/install/install-all.sh) 安装所有环境脚本
+- Add [download-install-all.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/bin/install/download-install-all.sh) 下载并安装所有环境脚本
+- Add [deploy.sh](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/deploy/deploy.sh) 下载项目/构建/部署/启动项目脚本
 
 - Add `maven-javadoc-plugin` java api docs
 
 ### 📔  Documentation
-- [CentOS Quick Installation Environment / Build / Deploy / Launch Spring-boot-plus Project](https://github.com/geekidea/spring-boot-plus#centos-quick-installation-environment--build--deploy--launch-spring-boot-plus-project)
-- [spring-boot-plus java docs](http://geekidea.io/spring-boot-plus-apidocs/)
+- [CentOS Quick Installation Environment / Build / Deploy / Launch Spring-boot-plus Project](https://github.com/snailuu/spring-boot-plus#centos-quick-installation-environment--build--deploy--launch-spring-boot-plus-project)
+- [spring-boot-plus java docs](http://snailuu.io/spring-boot-plus-apidocs/)
 
 ### 🔨 Dependency Upgrades
 - Upgrade to `springboot` 2.1.9.RELEASE
@@ -278,8 +278,8 @@ config.setRequestMappingType(RequestMappingType.CAMEL);
 - Fix 优化文件下载，Firefox 中文乱码问题
 
 ### 📔  Documentation
-- [spring-boot-plus-architecture](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/img/spring-boot-plus-architecture.jpg)
-- [5 Minutes Finish CRUD](https://github.com/geekidea/spring-boot-plus#5-minutes-finish-crud)
+- [spring-boot-plus-architecture](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/img/spring-boot-plus-architecture.jpg)
+- [5 Minutes Finish CRUD](https://github.com/snailuu/spring-boot-plus#5-minutes-finish-crud)
 
 ### 🔨 Dependency Upgrades
 - `pom.xml` 使用 `spring-boot-starter-validation` 替换 `hibernate-validator` 依赖
@@ -389,7 +389,7 @@ config.setRequestMappingType(RequestMappingType.CAMEL);
 - [FAQ](https://springboot.plus/guide/faq.html)
 
 ### 😃 QQ技术交流讨论群
-![QQ技术交流讨论群](https://raw.githubusercontent.com/geekidea/spring-boot-plus/master/docs/img/spring-boot-plus-qq-group.png)
+![QQ技术交流讨论群](https://raw.githubusercontent.com/snailuu/spring-boot-plus/master/docs/img/spring-boot-plus-qq-group.png)
 
 
 ## [V1.0.0-RELEASE] 2019.07.10
@@ -430,6 +430,6 @@ config.setRequestMappingType(RequestMappingType.CAMEL);
 
 ### 📔  Documentation
 - 官网：[https://springboot.plus](https://springboot.plus)
-- GITHUB：[https://github.com/geekidea/spring-boot-plus](https://github.com/geekidea/spring-boot-plus "spring-boot-plus github")
-- GITEE：[https://gitee.com/geekidea/spring-boot-plus](https://gitee.com/geekidea/spring-boot-plus "spring-boot-plus gitee")
+- GITHUB：[https://github.com/snailuu/spring-boot-plus](https://github.com/snailuu/spring-boot-plus "spring-boot-plus github")
+- GITEE：[https://gitee.com/snailuu/spring-boot-plus](https://gitee.com/snailuu/spring-boot-plus "spring-boot-plus gitee")
 

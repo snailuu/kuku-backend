@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.geekidea.boot.test.mapper.TypeTicketMapper">
+<mapper namespace="io.snailuu.boot.test.mapper.TypeTicketMapper">
 
-    <select id="getTypeTicketById" resultType="io.geekidea.boot.test.vo.TypeTicketVo">
+    <select id="getTypeTicketById" resultType="io.snailuu.boot.test.vo.TypeTicketVo">
         select *
         from type_ticket
         where id = #{id}
     </select>
 
-    <select id="getTypeTicketPage" parameterType="io.geekidea.boot.test.query.TypeTicketQuery"
-            resultType="io.geekidea.boot.test.vo.TypeTicketVo">
+    <select id="getTypeTicketPage" parameterType="io.snailuu.boot.test.query.TypeTicketQuery"
+            resultType="io.snailuu.boot.test.vo.TypeTicketVo">
         select *
         from type_ticket
         <where>
@@ -19,14 +19,14 @@
         </where>
     </select>
 
-    <select id="getAppTypeTicketById" resultType="io.geekidea.boot.test.vo.AppTypeTicketVo">
+    <select id="getAppTypeTicketById" resultType="io.snailuu.boot.test.vo.AppTypeTicketVo">
         select *
         from type_ticket
         where id = #{id}
     </select>
 
-    <select id="getAppTypeTicketPage" parameterType="io.geekidea.boot.test.query.AppTypeTicketQuery"
-            resultType="io.geekidea.boot.test.vo.AppTypeTicketVo">
+    <select id="getAppTypeTicketPage" parameterType="io.snailuu.boot.test.query.AppTypeTicketQuery"
+            resultType="io.snailuu.boot.test.vo.AppTypeTicketVo">
         select *
         from type_ticket
         <where>

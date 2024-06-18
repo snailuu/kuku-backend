@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-	<groupId>io.geekidea.boot</groupId>
+	<groupId>io.snailuu.boot</groupId>
 	<artifactId>kuku-backend</artifactId>
     <version>2.7.18</version>
 
@@ -26,10 +26,10 @@
     <developers>
         <developer>
             <id>spring-boot-plus</id>
-            <name>geekidea</name>
-            <email>geekidea@qq.com</email>
+            <name>snailuu</name>
+            <email>snailuu@qq.com</email>
             <url>https://springboot.plus</url>
-            <organizationUrl>https://geekidea.io</organizationUrl>
+            <organizationUrl>https://snailuu.io</organizationUrl>
         </developer>
     </developers>
 

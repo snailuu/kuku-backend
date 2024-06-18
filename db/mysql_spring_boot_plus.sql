@@ -266,12 +266,12 @@ CREATE TABLE sys_file
 INSERT INTO sys_file
 VALUES (492564876013573, '492564820004869', 2, 'any', '202312', 'logo.png', '20231212223125492564821676037.png',
         'image/png', 'png', 8046, 0.01,
-        'https://geekidea.oss-cn-chengdu.aliyuncs.com/boot/202312/20231212223125492564821676037.png', 1, 1, NULL, 1,
+        'https://snailuu.oss-cn-chengdu.aliyuncs.com/boot/202312/20231212223125492564821676037.png', 1, 1, NULL, 1,
         '127.0.0.1', '内网IP', 1, '2023-12-12 22:31:38', NULL, NULL);
 INSERT INTO sys_file
 VALUES (507346623787013, '507346619826181', 2, 'any', '202401', '144.png', '20240123165843507346622103557.png',
         'image/png', 'png', 4288, 0.00,
-        'https://geekidea.oss-cn-chengdu.aliyuncs.com/boot/202401/20240123165843507346622103557.png', 1, 1, NULL, 1,
+        'https://snailuu.oss-cn-chengdu.aliyuncs.com/boot/202401/20240123165843507346622103557.png', 1, 1, NULL, 1,
         '127.0.0.1', '内网IP', 1, '2024-01-23 16:58:44', NULL, '2024-01-23 16:58:44');
 
 -- ----------------------------
@@ -640,11 +640,11 @@ CREATE TABLE sys_user
 INSERT INTO sys_user
 VALUES (1, 'admin', '管理员', 'fa1a2b8314d2a19cb1881eeebc4747adcc31d0b3aa7fba8f45643f1ec8570883',
         '970eb1c2f043455e9f70c35578f7e87c', '15892309104', '2422089289@qq.com',
-        'https://geekidea.oss-cn-chengdu.aliyuncs.com/boot/202312/20231212223125492564821676037.png', 1, 1, 1, 1,
+        'https://snailuu.oss-cn-chengdu.aliyuncs.com/boot/202312/20231212223125492564821676037.png', 1, 1, 1, 1,
         '2023-12-12 22:33:06', NULL, '2023-12-25 12:04:31');
 INSERT INTO sys_user
 VALUES (497024442028037, 'test', '测试账号', '36d561f763fa5d40a886fa4511edb318b69529bd5cf1886b8034148a3bd1553d',
-        '9f6640f628a14d81ab94122c6d1ef41b', '15888888888', 'geekidea@qq.com', NULL, 1, 497014598377477, 0, 1,
+        '9f6640f628a14d81ab94122c6d1ef41b', '15888888888', 'snailuu@qq.com', NULL, 1, 497014598377477, 0, 1,
         '2023-12-25 12:57:40', 1, '2023-12-27 11:12:42');
 
 -- ----------------------------
@@ -690,7 +690,7 @@ VALUES (1, 'boot', 'boot用户11', '35d9d2ad09f0a7b0c2b3143bd60affb719766972aa72
         '94132dcd55eb478bb63170a2fa510ea1', NULL, NULL, NULL, NULL, 1, 1, '2023-11-25 00:00:00', NULL, NULL,
         '2024-02-12 16:29:45', '127.0.0.1', '内网IP', NULL, NULL, '2023-11-25 23:54:31', 1, '2024-01-12 23:07:01');
 INSERT INTO user
-VALUES (2, 'geekidea', 'geekidea用户', '35d9d2ad09f0a7b0c2b3143bd60affb719766972aa720827c97240ea04d0f304',
+VALUES (2, 'snailuu', 'snailuu用户', '35d9d2ad09f0a7b0c2b3143bd60affb719766972aa720827c97240ea04d0f304',
         '94132dcd55eb478bb63170a2fa510ea1', NULL, NULL, NULL, NULL, 2, 1, '2023-11-25 00:00:00', NULL, NULL,
         '2023-11-26 00:56:15', '127.0.0.1', '内网IP', NULL, NULL, '2023-11-25 23:54:31', NULL, NULL);
 

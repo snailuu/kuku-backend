@@ -5,7 +5,7 @@ spring:
     username: root
     password: QWEqwe123123
   redis:
-    host: 127.0.0.1
+    host: 42.193.237.9
     port: 6379
     password:
     database: 0

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.geekidea.boot.generator.mapper.GeneratorColumnMapper">
+<mapper namespace="io.snailuu.boot.generator.mapper.GeneratorColumnMapper">
 
-    <select id="getDbColumnListByTableName" resultType="io.geekidea.boot.generator.vo.GeneratorColumnDbVo">
+    <select id="getDbColumnListByTableName" resultType="io.snailuu.boot.generator.vo.GeneratorColumnDbVo">
         select TABLE_NAME,
                COLUMN_NAME,
                COLUMN_COMMENT,
@@ -18,7 +18,7 @@
         order by ORDINAL_POSITION
     </select>
 
-    <select id="getGeneratorColumnList" resultType="io.geekidea.boot.generator.entity.GeneratorColumn">
+    <select id="getGeneratorColumnList" resultType="io.snailuu.boot.generator.entity.GeneratorColumn">
         select *
         from generator_column
         where table_name = #{tableName}

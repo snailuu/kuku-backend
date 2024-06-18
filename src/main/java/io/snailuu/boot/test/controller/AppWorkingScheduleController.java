@@ -1,0 +1,61 @@
+package io.snailuu.boot.test.controller;
+
+import io.snailuu.boot.framework.page.Paging;
+import io.snailuu.boot.framework.response.ApiResult;
+import io.snailuu.boot.test.query.AppWorkingScheduleQuery;
+import io.snailuu.boot.test.service.WorkingScheduleService;
+import io.snailuu.boot.test.vo.AppWorkingScheduleVo;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+/**
+ * App人员排班 控制器
+ *
+ * @author snailuu
+ * @since 2024-06-15
+ */
+@Slf4j
+@RestController
+@Tag(name = "App人员排班")
+@RequestMapping("/app/workingSchedule")
+public class AppWorkingScheduleController {
+
+    @Autowired
+    private WorkingScheduleService workingScheduleService;
+
+    /**
+     * 获取App人员排班详情
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Operation(summary = "获取App人员排班详情")
+    @PostMapping("/getAppWorkingSchedule/{id}")
+    public ApiResult<AppWorkingScheduleVo> getAppWorkingSchedule(@PathVariable Long id) {
+        log.info("获取App人员排班详情：{}", id);
+        AppWorkingScheduleVo appWorkingScheduleVo = workingScheduleService.getAppWorkingScheduleById(id);
+        return ApiResult.success(appWorkingScheduleVo);
+    }
+
+    /**
+     * 获取App人员排班分页列表
+     *
+     * query
+     * @return
+     * @throws Exception
+     */
+    @Operation(summary = "获取App人员排班分页列表")
+    @PostMapping("/getAppWorkingSchedulePage")
+    public ApiResult<AppWorkingScheduleVo> getAppWorkingSchedulePage(@Valid @RequestBody AppWorkingScheduleQuery query) {
+        log.info("获取App人员排班分页列表：{}", query);
+        Paging<AppWorkingScheduleVo> paging = workingScheduleService.getAppWorkingSchedulePage(query);
+        return ApiResult.success(paging);
+    }
+
+}

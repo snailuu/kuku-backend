@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.geekidea.boot.test.mapper.FooBarMapper">
+<mapper namespace="io.snailuu.boot.test.mapper.FooBarMapper">
 
-    <select id="getFooBarById" resultType="io.geekidea.boot.test.vo.FooBarVo">
+    <select id="getFooBarById" resultType="io.snailuu.boot.test.vo.FooBarVo">
         select *
         from foo_bar
         where id = #{id}
     </select>
 
-    <select id="getFooBarPage" parameterType="io.geekidea.boot.test.query.FooBarQuery"
-            resultType="io.geekidea.boot.test.vo.FooBarVo">
+    <select id="getFooBarPage" parameterType="io.snailuu.boot.test.query.FooBarQuery"
+            resultType="io.snailuu.boot.test.vo.FooBarVo">
         select *
         from foo_bar
         <where>
@@ -19,14 +19,14 @@
         </where>
     </select>
 
-    <select id="getAppFooBarById" resultType="io.geekidea.boot.test.vo.AppFooBarVo">
+    <select id="getAppFooBarById" resultType="io.snailuu.boot.test.vo.AppFooBarVo">
         select *
         from foo_bar
         where id = #{id}
     </select>
 
-    <select id="getAppFooBarPage" parameterType="io.geekidea.boot.test.query.AppFooBarQuery"
-            resultType="io.geekidea.boot.test.vo.AppFooBarVo">
+    <select id="getAppFooBarPage" parameterType="io.snailuu.boot.test.query.AppFooBarQuery"
+            resultType="io.snailuu.boot.test.vo.AppFooBarVo">
         select *
         from foo_bar
         <where>

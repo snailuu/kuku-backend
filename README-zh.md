@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/geekidea/spring-boot-plus">
-   <img alt="spring-boot-plus logo" src="https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/logo.png">
+  <a href="https://github.com/snailuu/spring-boot-plus">
+   <img alt="spring-boot-plus logo" src="https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/logo.png">
   </a>
 </p>
 <p align="center">
@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">  
-  <a href="https://gitee.com/geekidea/spring-boot-plus">
+  <a href="https://gitee.com/snailuu/spring-boot-plus">
     <img alt="spring-boot-plus version" src="https://img.shields.io/badge/spring--boot--plus-2.7.18-blue">
   </a>
   <a href="https://github.com/spring-projects/spring-boot">
@@ -17,31 +17,10 @@
   <a href="https://cn.vuejs.org/">
     <img alt="spring boot version" src="https://img.shields.io/badge/vue-3.2-darkgreen">
   </a>
-  <a href="https://gitee.com/geekidea/spring-boot-plus/blob/master/LICENSE">
+  <a href="https://gitee.com/snailuu/spring-boot-plus/blob/master/LICENSE">
     <img alt="code style" src="https://img.shields.io/badge/license-MIT-green">
   </a>
 </p>
-
-### spring-boot-plus是一套前后端分离单体结构的快速开发框架
-
-## 开源协议 MIT-License
-### 任何公司或个人，均可进行商业使用，无需授权！
-### 任何公司或个人，均可进行商业使用，无需授权！
-### 任何公司或个人，均可进行商业使用，无需授权！
-
-## 前端项目地址  [VUE3+TS](https://gitee.com/geekidea/spring-boot-plus-vue3)
-
-#### [GITHUB](https://github.com/geekidea/spring-boot-plus) | [GITEE](https://gitee.com/geekidea/spring-boot-plus)
-
-#### [springboot.plus](http://springboot.plus)
-
-
-## 微信交流群
-![微信群](https://geekidea.oss-cn-chengdu.aliyuncs.com/geekidea/wechat-group.png)
-
-## 业务咨询
-![业务咨询](https://geekidea.oss-cn-chengdu.aliyuncs.com/geekidea/service.png)
-
 
 ### 主要特性
 - 集成spring boot 常用开发组件集、公共配置、AOP日志等
@@ -78,40 +57,40 @@ hibernate-validator | 6.2.5.Final | 后台参数校验注解 |
 hutool-all | 5.8.23 | 常用工具集 |
 lombok | 1.18.30 | 注解生成Java Bean等工具 |
 
-### [CHANGELOG](https://gitee.com/geekidea/spring-boot-plus/blob/master/CHANGELOG.md)
+### [CHANGELOG](https://gitee.com/snailuu/spring-boot-plus/blob/master/CHANGELOG.md)
 
 
 ### 4. 访问项目Swagger文档
 [http://localhost:8888/swagger-ui/index.html](http://localhost:8888/swagger-ui/index.html)
-![swagger-ui.png](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/swagger-v3.png)
+![swagger-ui.png](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/swagger-v3.png)
 
 ### 5. 访问Knife4j文档
 [http://localhost:8888/doc.html](http://localhost:8888/doc.html)
-![knife4j.png](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/knife4j-doc.png)
+![knife4j.png](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/knife4j-doc.png)
 
 
 ## spring-boot-plus-vue3 前端项目
-### [https://gitee.com/geekidea/spring-boot-plus-vue3](https://gitee.com/geekidea/spring-boot-plus-vue3)
+### [https://gitee.com/snailuu/spring-boot-plus-vue3](https://gitee.com/snailuu/spring-boot-plus-vue3)
 #### 系统用户列表
-![系统用户列表](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/user-manager.png)
+![系统用户列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/user-manager.png)
 #### 系统角色列表
-![系统角色列表](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/role-manager.png)
+![系统角色列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/role-manager.png)
 #### 系统菜单列表
-![系统菜单列表](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/menu-manager.png)
+![系统菜单列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/menu-manager.png)
 #### 系统部门列表
-![系统部门列表](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/dept-manager-dark.png)
+![系统部门列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/dept-manager-dark.png)
 #### 系统日志
-![系统日志列表](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-manager.png)
-![系统日志详情](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-detail.png)
+![系统日志列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-manager.png)
+![系统日志详情](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-detail.png)
 #### 个人中心
-![个人中心](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/profile.png)
+![个人中心](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/profile.png)
 
 ## 联系
-QQ群 625301326| 微信公众号 geekideaio|
+QQ群 625301326| 微信公众号 snailuuio|
 -|-|
-![spring-boot-plus QQ Group](https://spring-boot-plus.gitee.io/img/spring-boot-plus-qq-group.png) | ![Wechat Official Account](https://geekidea.oss-cn-chengdu.aliyuncs.com/geekidea/geekidea-wechat-official.jpg) |
+![spring-boot-plus QQ Group](https://spring-boot-plus.gitee.io/img/spring-boot-plus-qq-group.png) | ![Wechat Official Account](https://snailuu.oss-cn-chengdu.aliyuncs.com/snailuu/snailuu-wechat-official.jpg) |
 
 
 ## License
-spring-boot-plus is under the MIT-License. See the [LICENSE](https://gitee.com/geekidea/spring-boot-plus/blob/master/LICENSE) file for details.
+spring-boot-plus is under the MIT-License. See the [LICENSE](https://gitee.com/snailuu/spring-boot-plus/blob/master/LICENSE) file for details.
 

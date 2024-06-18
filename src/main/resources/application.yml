@@ -13,7 +13,7 @@ server:
 # spring配置
 spring:
   application:
-    name: spring-boot-plus
+    name: kuku-backend
   # 当前项目maven激活环境，例如：dev/test/prod
   profiles:
     active: dev
@@ -34,17 +34,7 @@ spring:
     default-encoding: utf-8
     host: smtp.163.com
     port: 25
-  #配置mq
-  rabbitmq:
-    virtual-host: email
-    username: guest
-    password: guest
-    addresses: 127.0.0.1:5672
-    publisher-returns: true
-    listener:
-      simple:
-        acknowledge-mode: manual
-        prefetch: 100
+
 
   # 数据源配置
   datasource:
@@ -58,7 +48,7 @@ spring:
       max-lifetime: 60000
   # redis配置
   redis:
-    host: 127.0.0.1
+    host: 42.193.237.9
     port: 6379
     password:
     # 连接超时时间（毫秒）
@@ -223,7 +213,7 @@ file:
     access-path: /file/**
     # 上传文件保存路径，注意：最后带上反斜杠
     # 如果为空，默认为当前项目路径下的upload目录
-    # 示例：/Users/mrliu/geekidea/spring-boot-plus/upload/
+    # 示例：/Users/mrliu/snailuu/spring-boot-plus/upload/
     upload-path:
     # 上传文件访问URL前缀
     # 示例：http://localhost:8888/api/file
@@ -265,14 +255,14 @@ knife4j:
     # 自定义底部
     enable-footer: false
     enable-footer-custom: true
-    footer-custom-content: MIT License | Copyright © 2019-2023 [geekidea](https://geekidea.io)
+    footer-custom-content: MIT License | Copyright © 2019-2023 [snailuu](https://snailuu.io)
 openapi:
   title: Boot API Docs
   description: spring-boot-plus后台接口文档
-  terms-of-service: https://github.com/geekidea
-  contact-name: geekidea
-  contact-url: https://geekidea.io
-  contact-email: geekidea@qq.com
+  terms-of-service: https://github.com/snailuu
+  contact-name: snailuu
+  contact-url: https://snailuu.io
+  contact-email: snailuu@qq.com
   version: 1.0
   external-description: spring-boot-plus
   external-url: https://springboot.plus

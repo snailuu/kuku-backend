@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/geekidea/spring-boot-plus">
-   <img alt="spring-boot-plus logo" src="https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/logo.png">
+  <a href="https://github.com/snailuu/spring-boot-plus">
+   <img alt="spring-boot-plus logo" src="https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/logo.png">
   </a>
 </p>
 <p align="center">
@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">  
-  <a href="https://github.com/geekidea/spring-boot-plus/">
+  <a href="https://github.com/snailuu/spring-boot-plus/">
     <img alt="spring-boot-plus version" src="https://img.shields.io/badge/spring--boot--plus-2.7.18-blue">
   </a>
   <a href="https://github.com/spring-projects/spring-boot">
@@ -17,7 +17,7 @@
   <a href="https://cn.vuejs.org/">
     <img alt="spring boot version" src="https://img.shields.io/badge/vue-3.2-darkgreen">
   </a>
-  <a href="https://github.com/geekidea/spring-boot-plus/blob/master/LICENSE">
+  <a href="https://github.com/snailuu/spring-boot-plus/blob/master/LICENSE">
     <img alt="code style" src="https://img.shields.io/badge/license-MIT-green">
   </a>
 </p>
@@ -33,11 +33,11 @@
 ## Open source License MIT-License
 > Any individual or company can conduct secondary development based on this framework for commercial use without authorization!
 
-## Vue Project  [VUE3+TS](https://gitee.com/geekidea/spring-boot-plus-vue3)
+## Vue Project  [VUE3+TS](https://gitee.com/snailuu/spring-boot-plus-vue3)
 
-#### [GITHUB](https://github.com/geekidea/spring-boot-plus) | [GITEE](https://gitee.com/geekidea/spring-boot-plus)
+#### [GITHUB](https://github.com/snailuu/spring-boot-plus) | [GITEE](https://gitee.com/snailuu/spring-boot-plus)
 
-#### [中文文档](https://github.com/geekidea/spring-boot-plus/blob/master/README-zh.md)
+#### [中文文档](https://github.com/snailuu/spring-boot-plus/blob/master/README-zh.md)
 
 #### [springboot.plus](http://springboot.plus)
 
@@ -64,7 +64,7 @@ spring-boot-plus
     ├── main
     │ ├── java
     │ │ └── io
-    │ │     └── geekidea
+    │ │     └── snailuu
     │ │         └── boot
     │ │             ├── auth
     │ │             ├── common
@@ -88,7 +88,7 @@ spring-boot-plus
     └── test
         ├── java
         │ └── io
-        │     └── geekidea
+        │     └── snailuu
         │         └── boot
         │             ├── generator
         │             └── system
@@ -121,15 +121,15 @@ hutool-all | 5.8.23 | Common toolset |
 lombok | 1.18.30 | Automatically plugs |
 
 ### Project Link Diagram
-![项目调用链路图](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/system-link.jpg)
+![项目调用链路图](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/system-link.jpg)
 
-### [CHANGELOG](https://github.com/geekidea/spring-boot-plus/blob/master/CHANGELOG.md)
+### [CHANGELOG](https://github.com/snailuu/spring-boot-plus/blob/master/CHANGELOG.md)
 
 
 ## Quick Start
 ### Clone spring-boot-plus
 ```bash
-git clone https://github.com/geekidea/spring-boot-plus.git
+git clone https://github.com/snailuu/spring-boot-plus.git
 cd spring-boot-plus
 ```
 
@@ -189,14 +189,14 @@ INSERT INTO foo_bar (id, name, foo, bar, remark, status, create_time, update_tim
 > Code generation entry class, in the generator module
 
 ```text
-src/test/java/io/geekidea/boot/generator/Generator.java
+src/test/java/io/snailuu/boot/generator/Generator.java
 ```
 
 ```java
 /**
  * spring-boot-plus Code Generator Main Class
  *
- * @author geekidea
+ * @author snailuu
  * @date 2022/3/16
  **/
 public class Generator {
@@ -204,9 +204,9 @@ public class Generator {
     public static void main(String[] args) throws Exception {
         GeneratorConfig config = new GeneratorConfig();
         // 项目信息配置
-        config.setParentPackage("io.geekidea.boot" )
+        config.setParentPackage("io.snailuu.boot" )
                 .setModuleName("foobar" )
-                .setAuthor("geekidea" );
+                .setAuthor("snailuu" );
         // 表名称和需要去掉的表前缀
         config.setTableNames("foo_bar" )
                 .setTablePrefix("");
@@ -272,14 +272,14 @@ src/test/resources
 > Project Main Class: SpringBootPlusApplication  [http://localhost:8888](http://localhost:8888)
 
 ```text
-src/main/java/io/geekidea/boot/SpringBootPlusApplication.java
+src/main/java/io/snailuu/boot/SpringBootPlusApplication.java
 ```
 
 ```java
 /**
  * spring-boot-plus Project Main Class
  *
- * @author geekidea
+ * @author snailuu
  * @date 2022-3-16
  */
 @EnableAsync
@@ -305,41 +305,41 @@ public class SpringBootPlusApplication {
 
 ### 4. Access Swagger Docs
 [http://localhost:8888/swagger-ui/index.html](http://localhost:8888/swagger-ui/index.html)
-![swagger-ui.png](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/swagger-v3.png)
+![swagger-ui.png](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/swagger-v3.png)
 
 ### 5. Access Knife4j Docs 
 [http://localhost:8888/doc.html](http://localhost:8888/doc.html)
-![knife4j.png](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/knife4j-doc.png)
+![knife4j.png](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/knife4j-doc.png)
 
 
 ## spring-boot-plus-vue Vue3 Project
-### [GITEE-REPO](https://gitee.com/geekidea/spring-boot-plus-vue3)
+### [GITEE-REPO](https://gitee.com/snailuu/spring-boot-plus-vue3)
 #### System User List
-![System User List](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/user-manager.png)
+![System User List](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/user-manager.png)
 #### System Role List
-![System Role List](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/role-manager.png)
+![System Role List](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/role-manager.png)
 #### System Menu List
-![System Menu List](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/menu-manager.png)
+![System Menu List](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/menu-manager.png)
 #### System Department
-![System Department List](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/dept-manager-dark.png)
+![System Department List](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/dept-manager-dark.png)
 #### System Log List
-![System Log List](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-manager.png)
-![System Log Detail](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-detail.png)
+![System Log List](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-manager.png)
+![System Log Detail](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-detail.png)
 #### User Profile
-![User Profile](https://geekidea.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/profile.png)
+![User Profile](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/profile.png)
 
 ## spring-boot-plus Videos  :movie_camera: 
 
 
-QQ群 625301326| 微信公众号 geekideaio|
+QQ群 625301326| 微信公众号 snailuuio|
 -|-|
-![spring-boot-plus QQ Group](https://spring-boot-plus.gitee.io/img/spring-boot-plus-qq-group.png) | ![Wechat Official Account](https://geekidea.oss-cn-chengdu.aliyuncs.com/geekidea/geekidea-wechat-official.jpg) |
+![spring-boot-plus QQ Group](https://spring-boot-plus.gitee.io/img/spring-boot-plus-qq-group.png) | ![Wechat Official Account](https://snailuu.oss-cn-chengdu.aliyuncs.com/snailuu/snailuu-wechat-official.jpg) |
 
 微信技术交流群| 业务咨询商务合作|
 -|-|
-![微信群](https://geekidea.oss-cn-chengdu.aliyuncs.com/geekidea/wechat-group.png) | ![业务咨询商务合作](https://geekidea.oss-cn-chengdu.aliyuncs.com/geekidea/business-small.png) |
+![微信群](https://snailuu.oss-cn-chengdu.aliyuncs.com/snailuu/wechat-group.png) | ![业务咨询商务合作](https://snailuu.oss-cn-chengdu.aliyuncs.com/snailuu/business-small.png) |
 
 
 ## License
-spring-boot-plus is under the MIT-License. See the [LICENSE](https://github.com/geekidea/spring-boot-plus/blob/master/LICENSE) file for details.
+spring-boot-plus is under the MIT-License. See the [LICENSE](https://github.com/snailuu/spring-boot-plus/blob/master/LICENSE) file for details.
 

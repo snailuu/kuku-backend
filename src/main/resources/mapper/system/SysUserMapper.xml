@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="io.geekidea.boot.system.mapper.SysUserMapper">
+<mapper namespace="io.snailuu.boot.system.mapper.SysUserMapper">
 
-    <select id="getSysUserById" resultType="io.geekidea.boot.system.vo.SysUserVo">
+    <select id="getSysUserById" resultType="io.snailuu.boot.system.vo.SysUserVo">
         select u.*, r.name roleName
         from sys_user u
                  inner join sys_role r
@@ -10,8 +10,8 @@
         where u.id = #{id}
     </select>
 
-    <select id="getSysUserPage" parameterType="io.geekidea.boot.system.query.SysUserQuery"
-            resultType="io.geekidea.boot.system.vo.SysUserVo">
+    <select id="getSysUserPage" parameterType="io.snailuu.boot.system.query.SysUserQuery"
+            resultType="io.snailuu.boot.system.vo.SysUserVo">
         select u.*,
         r.name roleName,
         r.is_system roleIsSystem
@@ -40,14 +40,14 @@
         </where>
     </select>
 
-    <select id="getSysUserByUsername" resultType="io.geekidea.boot.system.entity.SysUser">
+    <select id="getSysUserByUsername" resultType="io.snailuu.boot.system.entity.SysUser">
         select u.*
         from sys_user u
         where u.username = #{username}
     </select>
 
-    <select id="getSysUserByNickname" parameterType="io.geekidea.boot.system.query.SysUserQuery"
-            resultType="io.geekidea.boot.system.vo.SysUserVo">
+    <select id="getSysUserByNickname" parameterType="io.snailuu.boot.system.query.SysUserQuery"
+            resultType="io.snailuu.boot.system.vo.SysUserVo">
         select * from sys_user
         where nickname like CONCAT('%',#{nickname},'%')
     </select>
