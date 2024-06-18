@@ -1,36 +1,13 @@
 <p align="center">
-  <a href="https://github.com/snailuu/spring-boot-plus">
-   <img alt="spring-boot-plus logo" src="https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/logo.png">
+  <a href="https://github.com/snailuu/kuku-backend">
+   <img alt="kuku logo" src="https://oss.snailuu.cn/kuku//202406/20240618011142559254324400133.png">
   </a>
 </p>
 <p align="center">
-  Everyone can develop projects independently, quickly and efficiently！
+  简单、快捷、方便的工单报修管理系统
 </p>
 
-<p align="center">  
-  <a href="https://gitee.com/snailuu/spring-boot-plus">
-    <img alt="spring-boot-plus version" src="https://img.shields.io/badge/spring--boot--plus-2.7.18-blue">
-  </a>
-  <a href="https://github.com/spring-projects/spring-boot">
-    <img alt="spring boot version" src="https://img.shields.io/badge/spring%20boot-2.7.18-brightgreen">
-  </a>
-  <a href="https://cn.vuejs.org/">
-    <img alt="spring boot version" src="https://img.shields.io/badge/vue-3.2-darkgreen">
-  </a>
-  <a href="https://gitee.com/snailuu/spring-boot-plus/blob/master/LICENSE">
-    <img alt="code style" src="https://img.shields.io/badge/license-MIT-green">
-  </a>
-</p>
 
-### 主要特性
-- 集成spring boot 常用开发组件集、公共配置、AOP日志等
-- 单体架构，更快更简单
-- 提供PC管理端与APP端代码接口
-- 集成mybatis plus快速dao操作
-- 快速生成后台代码: entity/dto/query/vo/controller/service/mapper/xml
-- 集成Swagger/Knife4j，可自动生成api文档
-- 集成Redis缓存
-- 集成HikariCP连接池，JDBC性能和慢查询检测
 
 
 ### 项目环境 
@@ -57,38 +34,70 @@ hibernate-validator | 6.2.5.Final | 后台参数校验注解 |
 hutool-all | 5.8.23 | 常用工具集 |
 lombok | 1.18.30 | 注解生成Java Bean等工具 |
 
-### [CHANGELOG](https://gitee.com/snailuu/spring-boot-plus/blob/master/CHANGELOG.md)
-
-
 ### 4. 访问项目Swagger文档
-[http://localhost:8888/swagger-ui/index.html](http://localhost:8888/swagger-ui/index.html)
-![swagger-ui.png](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/swagger-v3.png)
+
+http://localhost:8888/api/swagger-ui/index.html
+
+![image-20240618091456036](http://oss.snailuu.cn/picgo/image-20240618091456036.png)
 
 ### 5. 访问Knife4j文档
+
 [http://localhost:8888/doc.html](http://localhost:8888/doc.html)
-![knife4j.png](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/knife4j-doc.png)
+![image-20240618091942136](http://oss.snailuu.cn/picgo/image-20240618091942136.png)
 
 
-## spring-boot-plus-vue3 前端项目
-### [https://gitee.com/snailuu/spring-boot-plus-vue3](https://gitee.com/snailuu/spring-boot-plus-vue3)
-#### 系统用户列表
-![系统用户列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/user-manager.png)
-#### 系统角色列表
-![系统角色列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/role-manager.png)
-#### 系统菜单列表
-![系统菜单列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/menu-manager.png)
-#### 系统部门列表
-![系统部门列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/dept-manager-dark.png)
-#### 系统日志
-![系统日志列表](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-manager.png)
-![系统日志详情](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/log-detail.png)
+## 前端项目
+### https://github.com/snailuu/kuku-fronted
+
+#### 首页数据
+
+![首页数据](http://oss.snailuu.cn/picgo/image-20240618092105351.png)
+
+#### 工单类型管理
+
+![工单类型管理](http://oss.snailuu.cn/picgo/image-20240618092137403.png)
+
+#### 工单管理
+
+![工单管理](C:/Users/snailuu/AppData/Roaming/Typora/typora-user-images/image-20240618092201102.png)
+
+#### 人员排班表管理
+
+![人员排班管理](C:/Users/snailuu/AppData/Roaming/Typora/typora-user-images/image-20240618092228508.png)
+
+#### 用户报修
+
+![用户报修](http://oss.snailuu.cn/picgo/image-20240618092418059.png)
+
+#### 排班日历
+
+![排班日历](http://oss.snailuu.cn/picgo/image-20240618092446414.png)
+
+![值班详情](http://oss.snailuu.cn/picgo/image-20240618092504588.png)
+
+
+
+#### 系统用户管理
+
+![系统用户管理](http://oss.snailuu.cn/picgo/image-20240618092956722.png)
+
+#### 系统角色管理
+
+![系统角色管理](http://oss.snailuu.cn/picgo/image-20240618093017528.png)
+
+
+
+#### 系统菜单管理
+
+![系统菜单管理](http://oss.snailuu.cn/picgo/image-20240618093039742.png)
+
+#### 系统信息
+
+![系统信息](C:/Users/snailuu/AppData/Roaming/Typora/typora-user-images/image-20240618093059937.png)
+
 #### 个人中心
-![个人中心](https://snailuu.oss-cn-chengdu.aliyuncs.com/spring-boot-plus/img/profile.png)
 
-## 联系
-QQ群 625301326| 微信公众号 snailuuio|
--|-|
-![spring-boot-plus QQ Group](https://spring-boot-plus.gitee.io/img/spring-boot-plus-qq-group.png) | ![Wechat Official Account](https://snailuu.oss-cn-chengdu.aliyuncs.com/snailuu/snailuu-wechat-official.jpg) |
+![个人中心](http://oss.snailuu.cn/picgo/image-20240618093122150.png)
 
 
 ## License
