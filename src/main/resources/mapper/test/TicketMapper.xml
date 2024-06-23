@@ -17,7 +17,7 @@
                 and user_id = #{userId}
             </if>
             <if test="title != null and title != ''">
-                and title like concat('%',#{column.propertyName},'%'
+                and title like concat('%',#{title},'%')
             </if>
             <if test="status != null">
                 and status = #{status}
